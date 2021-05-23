@@ -8,6 +8,7 @@ namespace SniffCore.Converters
     public enum NullToVisibilityDirection
     {
         NullIsVisible,
+        NotNullIsHidden,
         NullIsCollapsed,
         NullIsHidden
     }

@@ -15,23 +15,17 @@ namespace SniffCore.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var direction = NullToVisibilityDirection.NullIsCollapsed;
-            if (parameter is NullToVisibilityDirection)
-                direction = (NullToVisibilityDirection) parameter;
+            if (parameter is NullToVisibilityDirection visibilityDirection)
+                direction = visibilityDirection;
 
-            if (value == null)
+            return direction switch
             {
-                if (direction == NullToVisibilityDirection.NullIsCollapsed)
-                    return Visibility.Collapsed;
-                if (direction == NullToVisibilityDirection.NullIsHidden)
-                    return Visibility.Hidden;
-                return Visibility.Visible;
-            }
-
-            if (direction == NullToVisibilityDirection.NullIsCollapsed)
-                return Visibility.Visible;
-            if (direction == NullToVisibilityDirection.NullIsHidden)
-                return Visibility.Visible;
-            return Visibility.Collapsed;
+                NullToVisibilityDirection.NullIsVisible => value == null ? Visibility.Visible : Visibility.Collapsed,
+                NullToVisibilityDirection.NotNullIsHidden => value == null ? Visibility.Visible : Visibility.Hidden,
+                NullToVisibilityDirection.NullIsCollapsed => value == null ? Visibility.Collapsed : Visibility.Visible,
+                NullToVisibilityDirection.NullIsHidden => value == null ? Visibility.Hidden : Visibility.Visible,
+                _ => Visibility.Collapsed
+            };
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

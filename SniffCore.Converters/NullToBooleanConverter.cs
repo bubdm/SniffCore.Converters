@@ -14,19 +14,13 @@ namespace SniffCore.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var direction = NullToBooleanDirection.NullIsFalse;
-            if (parameter is NullToBooleanDirection)
-                direction = (NullToBooleanDirection) parameter;
+            if (parameter is NullToBooleanDirection booleanDirection)
+                direction = booleanDirection;
 
             if (value == null)
-            {
-                if (direction == NullToBooleanDirection.NullIsFalse)
-                    return false;
-                return true;
-            }
+                return direction != NullToBooleanDirection.NullIsFalse;
 
-            if (direction == NullToBooleanDirection.NullIsFalse)
-                return true;
-            return false;
+            return direction == NullToBooleanDirection.NullIsFalse;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

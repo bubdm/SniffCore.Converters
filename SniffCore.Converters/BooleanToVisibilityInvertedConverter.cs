@@ -15,23 +15,16 @@ namespace SniffCore.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var bValue = false;
-            if (value is bool)
-            {
-                bValue = (bool) value;
-            }
-            else if (value is bool?)
-            {
-                var tmp = (bool?) value;
-                bValue = tmp.HasValue ? tmp.Value : false;
-            }
+            if (value is bool tmp1)
+                bValue = tmp1;
 
             return bValue ? Visibility.Collapsed : Visibility.Visible;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is Visibility)
-                return (Visibility) value == Visibility.Collapsed;
+            if (value is Visibility visibility)
+                return visibility == Visibility.Collapsed;
             return false;
         }
     }

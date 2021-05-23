@@ -13,18 +13,9 @@ namespace SniffCore.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var flag = false;
-            if (value is bool)
-            {
-                flag = (bool) value;
-            }
-            else if (value is bool?)
-            {
-                var nullable = (bool?) value;
-                flag = nullable.HasValue ? nullable.Value : false;
-            }
-
-            return value == null ? false : !flag;
+            if (value is bool tmp1)
+                return !tmp1;
+            return true;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
