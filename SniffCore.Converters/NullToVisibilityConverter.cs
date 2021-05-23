@@ -10,8 +10,23 @@ using System.Windows.Data;
 
 namespace SniffCore.Converters
 {
+    /// <summary>
+    ///     Converts the null or not null value to <see cref="Visibility" /> with an optional direction parameter.
+    /// </summary>
+    [ValueConversion(typeof(object), typeof(Visibility), ParameterType = typeof(NullToVisibilityDirection))]
     public sealed class NullToVisibilityConverter : IValueConverter
     {
+        /// <summary>
+        ///     Converts the value null or not null to <see cref="Visibility" />.
+        /// </summary>
+        /// <param name="value">The object value to convert.</param>
+        /// <param name="targetType">unused</param>
+        /// <param name="parameter">
+        ///     [Optional] <see cref="NullToVisibilityDirection" />.
+        ///     <see cref="NullToVisibilityDirection.NullIsCollapsed" /> if not set.
+        /// </param>
+        /// <param name="culture">unused</param>
+        /// <returns>The visibility defined by the value depending on the direction.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var direction = NullToVisibilityDirection.NullIsCollapsed;
@@ -28,6 +43,15 @@ namespace SniffCore.Converters
             };
         }
 
+        /// <summary>
+        ///     Not Implemented.
+        /// </summary>
+        /// <param name="value">unused</param>
+        /// <param name="targetType">unused</param>
+        /// <param name="parameter">unused</param>
+        /// <param name="culture">unused</param>
+        /// <returns>Not implemented.</returns>
+        /// <exception cref="NotImplementedException">The <see cref="ConvertBack" /> is not implemented.</exception>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

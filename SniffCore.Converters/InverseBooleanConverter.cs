@@ -9,8 +9,20 @@ using System.Windows.Data;
 
 namespace SniffCore.Converters
 {
+    /// <summary>
+    ///     Converts a boolean to is opposite.
+    /// </summary>
+    [ValueConversion(typeof(bool), typeof(bool))]
     public sealed class InverseBooleanConverter : IValueConverter
     {
+        /// <summary>
+        ///     Converts the value as boolean to its opposite.
+        /// </summary>
+        /// <param name="value">The value to invert.</param>
+        /// <param name="targetType">unused</param>
+        /// <param name="parameter">unused</param>
+        /// <param name="culture">unused</param>
+        /// <returns>False if the value is true; otherwise true.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is bool tmp1)
@@ -18,6 +30,14 @@ namespace SniffCore.Converters
             return true;
         }
 
+        /// <summary>
+        ///     Converts the value as boolean to its opposite.
+        /// </summary>
+        /// <param name="value">The value to invert.</param>
+        /// <param name="targetType">unused</param>
+        /// <param name="parameter">unused</param>
+        /// <param name="culture">unused</param>
+        /// <returns>False if the value is true; otherwise true.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return Convert(value, targetType, parameter, culture);

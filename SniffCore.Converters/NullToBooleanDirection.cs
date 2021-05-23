@@ -5,9 +5,19 @@
 
 namespace SniffCore.Converters
 {
+    /// <summary>
+    ///     Represents the direction to be used in the <see cref="NullToVisibilityConverter" />.
+    /// </summary>
     public enum NullToBooleanDirection
     {
+        /// <summary>
+        ///     If the value is null, it returns true; otherwise false.
+        /// </summary>
         NullIsTrue,
+
+        /// <summary>
+        ///     If the value is null, it returns false; otherwise true
+        /// </summary>
         NullIsFalse
     }
 }
