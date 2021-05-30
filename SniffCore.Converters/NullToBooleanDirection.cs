@@ -6,7 +6,7 @@
 namespace SniffCore.Converters
 {
     /// <summary>
-    ///     Represents the direction to be used in the <see cref="NullToVisibilityConverter" />.
+    ///     Represents the direction to be used in the <see cref="NullToBooleanConverter" />.
     /// </summary>
     public enum NullToBooleanDirection
     {
