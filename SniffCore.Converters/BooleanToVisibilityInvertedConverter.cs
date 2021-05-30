@@ -14,6 +14,21 @@ namespace SniffCore.Converters
     /// <summary>
     ///     Converts true to <see cref="Visibility.Visible" /> and false to <see cref="Visibility.Collapsed" />. The opposite of <see cref="BooleanToVisibilityConverter" />
     /// </summary>
+    /// <example>
+    ///     <code lang="xaml">
+    /// <![CDATA[
+    /// <Window xmlns:sniffcore="http://sniffcore.com">
+    ///     <Window.Resources>
+    ///         <sniffcore:BooleanToVisibilityInvertedConverter x:Key="BooleanToVisibilityInvertedConverter" />
+    ///     </Window.Resources>
+    ///     
+    ///     <StackPanel>
+    ///         <Button Visibility="{Binding IsCollapsed, Converter={StaticResource BooleanToVisibilityInvertedConverter}}" />
+    ///     </StackPanel>
+    /// </Window>
+    /// ]]>
+    ///     </code>
+    /// </example>
     [ValueConversion(typeof(bool), typeof(Visibility))]
     public sealed class BooleanToVisibilityInvertedConverter : IValueConverter
     {

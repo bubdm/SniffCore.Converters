@@ -12,6 +12,21 @@ namespace SniffCore.Converters
     /// <summary>
     ///     Converts the null or not null value to bool with an optional direction parameter.
     /// </summary>
+    /// <example>
+    ///     <code lang="xaml">
+    /// <![CDATA[
+    /// <Window xmlns:sniffcore="http://sniffcore.com">
+    ///     <Window.Resources>
+    ///         <sniffcore:NullToBooleanConverter x:Key="NullToBooleanConverter" />
+    ///     </Window.Resources>
+    ///     
+    ///     <StackPanel>
+    ///         <CheckBox IsChecked="{Binding Object, Converter={StaticResource NullToBooleanConverter}, ConverterParameter={x:Static sniffcore:NullToBooleanDirection.NullIsTrue}}" />
+    ///     </StackPanel>
+    /// </Window>
+    /// ]]>
+    ///     </code>
+    /// </example>
     [ValueConversion(typeof(object), typeof(bool), ParameterType = typeof(NullToBooleanDirection))]
     public sealed class NullToBooleanConverter : IValueConverter
     {

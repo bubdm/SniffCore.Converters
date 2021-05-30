@@ -13,6 +13,21 @@ namespace SniffCore.Converters
     /// <summary>
     ///     Converts the null or not null value to <see cref="Visibility" /> with an optional direction parameter.
     /// </summary>
+    /// <example>
+    ///     <code lang="xaml">
+    /// <![CDATA[
+    /// <Window xmlns:sniffcore="http://sniffcore.com">
+    ///     <Window.Resources>
+    ///         <sniffcore:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+    ///     </Window.Resources>
+    ///     
+    ///     <StackPanel>
+    ///         <Button Visibility="{Binding Object, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter={x:Static sniffcore:NullToVisibilityDirection.NullIsVisible}}" />
+    ///     </StackPanel>
+    /// </Window>
+    /// ]]>
+    ///     </code>
+    /// </example>
     [ValueConversion(typeof(object), typeof(Visibility), ParameterType = typeof(NullToVisibilityDirection))]
     public sealed class NullToVisibilityConverter : IValueConverter
     {

@@ -12,6 +12,21 @@ namespace SniffCore.Converters
     /// <summary>
     ///     Converts a boolean to is opposite.
     /// </summary>
+    /// <example>
+    ///     <code lang="xaml">
+    /// <![CDATA[
+    /// <Window xmlns:sniffcore="http://sniffcore.com">
+    ///     <Window.Resources>
+    ///         <sniffcore:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+    ///     </Window.Resources>
+    ///     
+    ///     <StackPanel>
+    ///         <CheckBox IsChecked="{Binding IsUnchecked, Converter={StaticResource InverseBooleanConverter}}" />
+    ///     </StackPanel>
+    /// </Window>
+    /// ]]>
+    ///     </code>
+    /// </example>
     [ValueConversion(typeof(bool), typeof(bool))]
     public sealed class InverseBooleanConverter : IValueConverter
     {
