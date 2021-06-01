@@ -4,7 +4,7 @@ SniffCore.Converters
 SniffCore.Converters provides a bunch of useful converters to be used in XAMLs
 
 ## How To
-* [Wiki](http://wiki.sniffcore.com/index.php?title=SniffCore.Converters)
+* [Documentation](http://wiki.sniffcore.com)
 * [Website](http://sniffcore.com)
 
 ## License
