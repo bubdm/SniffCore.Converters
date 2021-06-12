@@ -1,7 +1,7 @@
 SniffCore.Converters
 ===
 
-SniffCore.Converters provides a bunch of useful converters to be used in XAMLs
+SniffCore.Converters provides a bunch of useful converters to be used in XAMLs.
 
 ## How To
 * [Documentation](http://documentation.sniffcore.com/)
