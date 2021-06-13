@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SniffCore.Converters", "Sni
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5002D411-76ED-4C37-B6C6-6F67FE013650}"
 	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
 		Icon.png = Icon.png
 		LICENSE = LICENSE
 		README.md = README.md
