@@ -2,8 +2,6 @@ using System.Globalization;
 using System.Windows;
 using NUnit.Framework;
 
-// ReSharper disable ExpressionIsAlwaysNull
-
 namespace SniffCore.Converters.Tests
 {
     [TestFixture]
